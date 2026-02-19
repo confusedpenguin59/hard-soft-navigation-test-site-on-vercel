@@ -7,8 +7,10 @@ Here's the site I created: https://hard-soft-navigation-test-site-on-v.vercel.ap
 
 **Reference:**
 * Source: https://github.com/WICG/soft-navigations?tab=readme-ov-file#overview (**token expires Mar 9, 2026**)
-* For testing, refer to here: https://github.com/WICG/soft-navigations?tab=readme-ov-file#i-want-to-take-this-for-a-spin
+* For testing setup, refer to here: https://github.com/WICG/soft-navigations?tab=readme-ov-file#i-want-to-take-this-for-a-spin
+  * For local testing, put all these files in a single directory. Then run python3 -m http.server (or https.server - I forget), then visit [http://localhost.](http://localhost:8000/index.html) (Note: Vercel does all of this automagically. Just upload your updated files, and that's it. Instant update.)
 * For debugging, check:
   *  chrome://settings/help (at least v144 Chrome)
   *  Inspect > Application > Frame > Origin Trails - to confirm SoftNavigation API is enabled
+
 
