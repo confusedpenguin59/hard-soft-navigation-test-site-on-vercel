@@ -13,6 +13,8 @@
 
 <div id="page3" hidden>
   <h1>Page 3</h1>
+  <img src="capybara.jpeg" width="400">
+  <br><br>
   <button onclick="softBack()">Back</button>
 </div>
 
@@ -24,6 +26,7 @@
   });
 
   observer.observe({ type: 'soft-navigation', buffered: true });
+
   function softNav() {
     history.pushState({}, '', '/page3.html');
     document.getElementById('main').hidden = true;
