@@ -4,40 +4,39 @@
   <meta http-equiv="origin-trial" content="Asra47c5PJdOJsGpQmgukEpiWUnItDRAmhRYo78do7yE1TaKxHXmC+ql58+EVp3ONPHJAgXEMSqiV4l9ZtA5Lg0AAACAeyJvcmlnaW4iOiJodHRwczovL2hhcmQtc29mdC1uYXZpZ2F0aW9uLXRlc3Qtc2l0ZS1vbi12LnZlcmNlbC5hcHA6NDQzIiwiZmVhdHVyZSI6IlNvZnROYXZpZ2F0aW9uSGV1cmlzdGljcyIsImV4cGlyeSI6MTc3MzEwMDgwMH0=">
 </head>
 <body>
-
 <div id="main">
   <h1>Page 2</h1>
   <a href="index.html"><button>Hard → Page 1</button></a>
   <button onclick="softNav()">Soft → Page 3</button>
 </div>
-
-<div id="page3" hidden>
-  <h1>Page 3</h1>
-  <img src="capybara.jpeg" width="400">
-  <br><br>
-  <button onclick="softBack()">Back</button>
-</div>
-
 <script>
   const observer = new PerformanceObserver((list) => {
     for (const entry of list.getEntries()) {
       console.log('Soft navigation detected:', entry);
     }
   });
-
   observer.observe({ type: 'soft-navigation', buffered: true });
 
   function softNav() {
     history.pushState({}, '', '/page3.html');
-    document.getElementById('main').hidden = true;
-    document.getElementById('page3').hidden = false;
+    document.body.innerHTML = `
+      <h1>Page 3</h1>
+      <img src="capybara.jpeg" width="400">
+      <br><br>
+      <button onclick="softBack()">Back</button>
+    `;
   }
+
   function softBack() {
     history.pushState({}, '', '/page2.html');
-    document.getElementById('page3').hidden = true;
-    document.getElementById('main').hidden = false;
+    document.body.innerHTML = `
+      <div id="main">
+        <h1>Page 2</h1>
+        <a href="index.html"><button>Hard → Page 1</button></a>
+        <button onclick="softNav()">Soft → Page 3</button>
+      </div>
+    `;
   }
 </script>
-
 </body>
 </html>
