@@ -17,6 +17,13 @@
 </div>
 
 <script>
+  const observer = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      console.log('Soft navigation detected:', entry);
+    }
+  });
+
+  observer.observe({ type: 'soft-navigation', buffered: true });
   function softNav() {
     history.pushState({}, '', '/page3.html');
     document.getElementById('main').hidden = true;
