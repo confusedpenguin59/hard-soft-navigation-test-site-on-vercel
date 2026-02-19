@@ -1,6 +1,6 @@
 “Soft navigations” are user-initiated but JS-driven same-document navigations.
 * The Soft Navigation API considers a "soft navigation" when the following occurs:
-*   A user-initiated interaction occurs, which results in DOM modifications that lead to sufficiently contentful paints, and a URL update occurs, which changes the history state.
+*   A user-initiated interaction occurs, which results in DOM modifications that lead to sufficiently contentful paints, and a URL update occurs, which changes the history state (via **history.pushState**)
 
 Here's the site I created: https://hard-soft-navigation-test-site-on-v.vercel.app/index.html
 
