@@ -9,6 +9,6 @@ Here's the site I created: https://hard-soft-navigation-test-site-on-v.vercel.ap
 * Source: https://github.com/WICG/soft-navigations?tab=readme-ov-file#overview
 * For testing, refer to here: https://github.com/WICG/soft-navigations?tab=readme-ov-file#i-want-to-take-this-for-a-spin
 * For debugging, check:
- * chrome://settings/help (at least v144 Chrome)
- * Inspect > Application > Frame > Origin Trails - to confirm SoftNavigation API is enabled
+  *  chrome://settings/help (at least v144 Chrome)
+  *  Inspect > Application > Frame > Origin Trails - to confirm SoftNavigation API is enabled
 
