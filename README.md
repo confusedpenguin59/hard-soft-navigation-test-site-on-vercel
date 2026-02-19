@@ -6,7 +6,7 @@ Here's the site I created: https://hard-soft-navigation-test-site-on-v.vercel.ap
 * Vercel: https://vercel.com/confusedpenguin59-2399s-projects/hard-soft-navigation-test-site-on-vercel
 
 **Reference:**
-* Source: https://github.com/WICG/soft-navigations?tab=readme-ov-file#overview
+* Source: https://github.com/WICG/soft-navigations?tab=readme-ov-file#overview (**token expires Mar 9, 2026**)
 * For testing, refer to here: https://github.com/WICG/soft-navigations?tab=readme-ov-file#i-want-to-take-this-for-a-spin
 * For debugging, check:
   *  chrome://settings/help (at least v144 Chrome)
