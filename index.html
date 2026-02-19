@@ -3,8 +3,8 @@
 <body>
 
 <div id="main">
-  <h1>Page 2</h1>
-  <a href="index.html"><button>Hard → Page 1</button></a>
+  <h1>Page 1</h1>
+  <a href="page2.html"><button>Hard → Page 2</button></a>
   <button onclick="softNav()">Soft → Page 3</button>
 </div>
 
@@ -20,7 +20,7 @@
     document.getElementById('page3').hidden = false;
   }
   function softBack() {
-    history.pushState({}, '', '/page2.html');
+    history.pushState({}, '', '/page1.html');
     document.getElementById('page3').hidden = true;
     document.getElementById('main').hidden = false;
   }
