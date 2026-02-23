@@ -27,7 +27,7 @@
 <div id="main">
   <h1>Page 2</h1>
   <a href="index.html"><button>Hard → Page 1</button></a>
-  <button onclick="softNav()">Soft → Page 3</button>
+  <button onclick="softNav('red')">Soft → Page 3</button>
   <input type="text" id="my-textbox" placeholder="Type something here..." />
   <div id="scroll-area">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -55,13 +55,31 @@
   });
   observer.observe({ type: 'soft-navigation', buffered: true });
 
-  function softNav() {
+  function softNav(color = 'red') {
     history.pushState({}, '', '/page3.html');
     document.body.innerHTML = `
       <h1>Page 3</h1>
       <img src="capybara.jpeg" width="400">
       <br><br>
       <button onclick="softBack()">Back</button>
+      <input type="text" id="my-textbox" placeholder="Type something here..." style="border: 3px solid ${color}; padding: 8px; font-size: 16px; width: 300px; margin: 16px 0; display: block;" />
+      <div id="scroll-area" style="border: 3px solid ${color}; width: 400px; padding: 10px; margin: 16px 0;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis molestie dictum semper, enim risus sodales nisi, sit amet commodo erat eros sit amet erat.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem.</p>
+        <p>In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend.</p>
+        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris.</p>
+        <p>Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+        <p>Aenean feugiat, leo eget elementum tincidunt, diam libero fringilla nisi, nec tincidunt nisi metus at nisl. Donec pellentesque libero at magna volutpat, nec tincidunt nulla fermentum.</p>
+        <p>Nullam vel sem. Nullam aliquet eros id eros. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <p>Maecenas vestibulum mollis diam. Pellentesque ut neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In dui magna, posuere eget, vestibulum et, tempor auctor, justo.</p>
+        <p>In ac felis quis tortor malesuada pretium. Pellentesque auctor neque. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+        <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+        <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+        <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.</p>
+      </div>
     `;
   }
   function softBack() {
