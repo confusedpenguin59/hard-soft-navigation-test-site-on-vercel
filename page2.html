@@ -55,6 +55,16 @@
   });
   observer.observe({ type: 'soft-navigation', buffered: true });
 
+  window.addEventListener('popstate', () => {
+    const path = window.location.pathname;
+    if (path === '/page2.html') {
+      softBack();
+    } else if (path === '/page3.html') {
+      const color = sessionStorage.getItem('page3color') || 'red';
+      softNav(color);
+    }
+  });
+
   function softNav(color = 'red') {
     sessionStorage.setItem('page3color', color);
     history.pushState({}, '', '/page3.html');

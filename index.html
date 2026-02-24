@@ -60,6 +60,16 @@
     softNav(color);
   }
 
+  window.addEventListener('popstate', () => {
+    const path = window.location.pathname;
+    if (path === '/' || path === '/index.html') {
+      softBack();
+    } else if (path === '/page3.html') {
+      const color = sessionStorage.getItem('page3color') || 'black';
+      softNav(color);
+    }
+  });
+
   function softNav(color = 'black') {
     sessionStorage.setItem('page3color', color);
     history.pushState({}, '', '/page3.html');
