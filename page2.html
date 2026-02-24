@@ -56,6 +56,7 @@
   observer.observe({ type: 'soft-navigation', buffered: true });
 
   function softNav(color = 'red') {
+    sessionStorage.setItem('page3color', color);
     history.pushState({}, '', '/page3.html');
     document.body.innerHTML = `
       <h1>Page 3</h1>

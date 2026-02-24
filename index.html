@@ -55,7 +55,13 @@
   });
   observer.observe({ type: 'soft-navigation', buffered: true });
 
+  if (window.location.pathname === '/page3.html') {
+    const color = sessionStorage.getItem('page3color') || 'black';
+    softNav(color);
+  }
+
   function softNav(color = 'black') {
+    sessionStorage.setItem('page3color', color);
     history.pushState({}, '', '/page3.html');
     document.body.innerHTML = `
       <h1>Page 3</h1>
